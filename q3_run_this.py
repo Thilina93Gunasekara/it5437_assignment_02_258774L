@@ -1,16 +1,3 @@
-# ═══════════════════════════════════════════════════════════════════════════════
-# IT5437 Assignment 02 — Question 3
-# Compatible with: VS Code + Colab plugin, Jupyter Lab, Local Jupyter
-# Point selection method: matplotlib widget backend (interactive window)
-# ═══════════════════════════════════════════════════════════════════════════════
-
-# ────────────────────────────────────────────────────────────────────────────
-# CELL 1 — Setup
-# ────────────────────────────────────────────────────────────────────────────
-# Install required packages (run once)
-# In VS Code terminal or Colab, run:
-#   pip install opencv-python-headless matplotlib numpy pillow
-
 import cv2
 import numpy as np
 import matplotlib
@@ -58,9 +45,6 @@ print("Setup complete.")
 # ────────────────────────────────────────────────────────────────────────────
 # CELL 2 — Load images
 # ────────────────────────────────────────────────────────────────────────────
-# PUT YOUR IMAGE PATHS HERE
-# If running in Colab/VS Code Colab, upload the files first then set paths.
-# If running locally, set the full path to your images.
 
 # Option A: Upload via Colab file upload (uncomment if in Colab browser)
 # from google.colab import files
@@ -99,17 +83,6 @@ print("Preview saved as q3_preview.png")
 
 # ────────────────────────────────────────────────────────────────────────────
 # CELL 3 — Point collection using ginput (works in VS Code with widget backend)
-# ────────────────────────────────────────────────────────────────────────────
-# This uses matplotlib's ginput() which DOES work in VS Code because
-# VS Code uses the widget/interactive backend, not the static PNG backend.
-#
-# HOW TO USE:
-# 1. Run this cell
-# 2. A large figure of c1 will open as an INTERACTIVE widget
-# 3. Use the zoom tool (magnifier icon in toolbar) to zoom in on landmarks
-# 4. Click 8 landmarks IN THE ORDER listed below
-# 5. After 8 clicks the figure closes automatically
-# 6. Then c2 opens — click the SAME 8 landmarks in the SAME order
 # ────────────────────────────────────────────────────────────────────────────
 
 N_POINTS = 8
@@ -397,9 +370,9 @@ plt.show()
 print("Saved: q3d_sift_diff.png  and  q3d_comparison.png")
 
 print(f"""
-╔══════════════════════════════════════════════════════════╗
+==========================================================
   DISCUSSION — Q3(d)
-╠══════════════════════════════════════════════════════════╣
+==========================================================
 
   SIFT H mean diff  = {mean_diff_sift:.2f} px
   Manual H mean diff = {mean_diff_manual:.2f} px
@@ -423,5 +396,5 @@ print(f"""
   shots, exposure differences, warpPerspective
   interpolation error.
 
-╚══════════════════════════════════════════════════════════╝
+==========================================================
 """)
